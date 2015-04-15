@@ -1,0 +1,1954 @@
+{
+  "area_detect":
+  {
+    "scope": "both",
+    "common":{
+      "name":  "area_detect",
+      "def":   "",
+      "type":  "number",
+      "read":  true,
+      "write": true,
+      "min":   1,
+      "max":   999999999
+
+    }
+  },"auto_brightness":
+{
+  "scope": "both",
+  "common":{
+    "name":  "auto_brightness",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"brightness":
+{
+  "scope": "both",
+  "common":{
+    "name":  "brightness",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   255
+
+  }
+},"contrast":
+{
+  "scope": "both",
+  "common":{
+    "name":  "contrast",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   255
+
+  }
+},"control_authentication":
+{
+  "scope": "none",
+  "common":{
+    "name":  "control_authentication",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"control_html_output":
+{
+  "scope": "none",
+  "common":{
+    "name":  "control_html_output",
+    "def":   true,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"control_localhost":
+{
+  "scope": "default",
+  "common":{
+    "name":  "control_localhost",
+    "def":   true,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"control_port":
+{
+  "scope": "default",
+  "common":{
+    "name":  "control_port",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   65535
+
+  }
+},"daemon":
+{
+  "scope": "default",
+  "common":{
+    "name":  "daemon",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"emulate_motion":
+{
+  "scope": "default",
+  "common":{
+    "name":  "emulate_motion",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"despeckle_filter":
+{
+  "scope": "both",
+  "common":{
+    "name":  "despeckle_filter",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"ffmpeg_bps":
+{
+  "scope": "both",
+  "common":{
+    "name":  "ffmpeg_bps",
+    "def":   400000,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   9999999
+  }
+},"event_gap":
+{
+  "scope": "both",
+  "common":{
+    "name":  "event_gap",
+    "def":   60,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   1000
+  }
+},"ffmpeg_cap_motion":
+{
+  "scope": "both",
+  "common":{
+    "name":  "ffmpeg_cap_motion",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+  }
+},"ffmpeg_cap_new":
+{
+  "scope": "both",
+  "common":{
+    "name":  "ffmpeg_cap_new",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+  }
+},"ffmpeg_deinterlace":
+{
+  "scope": "both",
+  "common":{
+    "name":  "ffmpeg_deinterlace",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"ffmpeg_output_movies":
+{
+  "scope": "both",
+  "common":{
+    "name":  "ffmpeg_output_movies",
+    "def":   true,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"ffmpeg_output_debug_movies":
+{
+  "scope": "both",
+  "common":{
+    "name":  "ffmpeg_output_debug_movies",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"ffmpeg_filename (now called movie_filename)":
+{
+  "scope": "both",
+  "common":{
+    "name":  "ffmpeg_filename (now called movie_filename)",
+    "def":    "%v-%Y%m%d%H%M%S",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"ffmpeg_timelapse":
+{
+  "scope": "both",
+  "common":{
+    "name":  "ffmpeg_timelapse",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   2147483647
+
+  }
+},"ffmpeg_timelapse_mode":
+{
+  "scope": "both",
+  "common":{
+    "name":  "ffmpeg_timelapse_mode",
+    "def":   "daily",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"ffmpeg_variable_bitrate":
+{
+  "scope": "both",
+  "common":{
+    "name":  "ffmpeg_variable_bitrate",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true
+  }
+},"ffmpeg_video_codec":
+{
+  "scope": "both",
+  "common":{
+    "name":  "ffmpeg_video_codec",
+    "def":   "mpeg4",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"framerate":
+{
+  "scope": "both",
+  "common":{
+    "name":  "framerate",
+    "def":   100,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   2,
+    "max":   100
+
+  }
+},"frequency":
+{
+  "scope": "both",
+  "common":{
+    "name":  "frequency",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   999999
+
+  }
+},"gap":
+{
+  "scope": "both",
+  "common":{
+    "name":  "gap",
+    "def":   60,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   2147483647
+
+  }
+},"height":
+{
+  "scope": "both",
+  "common":{
+    "name":  "height",
+    "def":   1080,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   9,
+    "max":   1080
+
+  }
+},"hue":
+{
+  "scope": "both",
+  "common":{
+    "name":  "hue",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   255
+
+  }
+},"input":
+{
+  "scope": "both",
+  "common":{
+    "name":  "input",
+    "def":   8,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   8
+
+  }
+},"jpeg_filename":
+{
+  "scope": "both",
+  "common":{
+    "name":  "jpeg_filename",
+    "def":    "%v-%Y%m%d%H%M%S-%q",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"lightswitch":
+{
+  "scope": "both",
+  "common":{
+    "name":  "lightswitch",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   100
+
+  }
+},"locate":
+{
+  "scope": "both",
+  "common":{
+    "name":  "locate",
+    "def":   false,
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"mask_file":
+{
+  "scope": "both",
+  "common":{
+    "name":  "mask_file",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"max_mpeg_time":
+{
+  "scope": "both",
+  "common":{
+    "name":  "max_mpeg_time",
+    "def":   3600,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   2147483647
+
+  }
+},"max_movie_time":
+{
+  "scope": "both",
+  "common":{
+    "name":  "max_movie_time",
+    "def":   3600,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   2147483647
+
+  }
+},"minimum_frame_time":
+{
+  "scope": "both",
+  "common":{
+    "name":  "minimum_frame_time",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   2147483647
+
+  }
+},"minimum_motion_frames":
+{
+  "scope": "both",
+  "common":{
+    "name":  "minimum_motion_frames",
+    "def":   1,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   1,
+    "max":   1000
+
+  }
+},"motion_video_pipe":
+{
+  "scope": "both",
+  "common":{
+    "name":  "motion_video_pipe",
+    "def":   "",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+
+  }
+},"movie_filename":
+{
+  "scope": "both",
+  "common":{
+    "name":  "movie_filename",
+    "def":    "%v-%Y%m%d%H%M%S",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"mysql_db":
+{
+  "scope": "default",
+  "common":{
+    "name":  "mysql_db",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"mysql_host":
+{
+  "scope": "default",
+  "common":{
+    "name":  "mysql_host",
+    "def":    "localhost",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"mysql_password":
+{
+  "scope": "default",
+  "common":{
+    "name":  "mysql_password",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"mysql_user":
+{
+  "scope": "default",
+  "common":{
+    "name":  "mysql_user" ,
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"netcam_http":
+{
+  "scope": "both",
+  "common":{
+    "name":  "netcam_http",
+    "def":    "1.0",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"netcam_proxy":
+{
+  "scope": "both",
+  "common":{
+    "name":  "netcam_proxy" ,
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"netcam_tolerant_check":
+{
+  "scope": "both",
+  "common":{
+    "name":  "netcam_tolerant_check",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"netcam_keepalive":
+{
+  "scope": "both",
+  "common":{
+    "name":  "netcam_keepalive",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"rtsp_uses_tcp":
+{
+  "scope": "both",
+  "common":{
+    "name":  "rtsp_uses_tcp",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"sql_log_picture":
+{
+  "scope": "both",
+  "common":{
+    "name":  "sql_log_picture",
+    "def":   true,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"sql_log_movie":
+{
+  "scope": "both",
+  "common":{
+    "name":  "sql_log_movie",
+    "def":   true,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"netcam_url":
+{
+  "scope": "both",
+  "common":{
+    "name":  "netcam_url",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"sql_event_start_query":
+{
+  "scope": "default",
+  "common":{
+    "name":  "sql_event_start_query",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"sql_file_query":
+{
+  "scope": "default",
+  "common":{
+    "name":  "sql_file_query",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"database_type":
+{
+  "scope": "default",
+  "common":{
+    "name":  "database_type",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"database_dbname":
+{
+  "scope": "default",
+  "common":{
+    "name":  "database_dbname",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"database_host":
+{
+  "scope": "default",
+  "common":{
+    "name":  "database_host",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"database_user":
+{
+  "scope": "default",
+  "common":{
+    "name":  "database_user",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"database_password":
+{
+  "scope": "default",
+  "common":{
+    "name":  "database_password",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"netcam_userpass":
+{
+  "scope": "both",
+  "common":{
+    "name":  "netcam_userpass",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"noise_level":
+{
+  "scope": "both",
+  "common":{
+    "name":  "noise_level",
+    "def":   32,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   1,
+    "max":   255
+
+  }
+},"noise_tune":
+{
+  "scope": "both",
+  "common":{
+    "name":  "noise_tune",
+    "def":   true,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"norm":
+{
+  "scope": "both",
+  "common":{
+    "name":  "norm",
+    "def":   0,
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"on_area_detected":
+{
+  "scope": "none",
+  "common":{
+    "name":  "on_area_detected",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"on_camera_lost":
+{
+  "scope": "none",
+  "common":{
+    "name":  "on_camera_lost",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"on_event_end":
+{
+  "scope": "none",
+  "common":{
+    "name":  "on_event_end",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"on_event_start":
+{
+  "scope": "none",
+  "common":{
+    "name":  "on_event_start",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"output_pictures":
+{
+  "scope": "none",
+  "common":{
+    "name":  "output_pictures",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"on_motion_detected":
+{
+  "scope": "none",
+  "common":{
+    "name":  "on_motion_detected",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"on_movie_end":
+{
+  "scope": "none",
+  "common":{
+    "name":  "on_movie_end",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"on_movie_start":
+{
+  "scope": "none",
+  "common":{
+    "name":  "on_movie_start",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"on_picture_save":
+{
+  "scope": "none",
+  "common":{
+    "name":  "on_picture_save",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"picture_type":
+{
+  "scope": "none",
+  "common":{
+    "name":  "picture_type",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"output_all":
+{
+  "scope": "both",
+  "common":{
+    "name":  "output_all",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"output_debug_pictures":
+  {
+    "scope": "both",
+    "common":{
+      "name":  "output_debug_pictures",
+      "def":   false,
+      "type":  "boolean",
+      "read":  true,
+      "write": true,
+      "min":   false,
+      "max":   true
+
+    }
+  },"output_motion":
+{
+  "scope": "both",
+  "common":{
+    "name":  "output_motion",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"output_normal":
+{
+  "scope": "both",
+  "common":{
+    "name":  "output_normal",
+    "def":   true,
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"pgsql_db":
+{
+  "scope": "default",
+  "common":{
+    "name":  "pgsql_db",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"pgsql_host":
+{
+  "scope": "default",
+  "common":{
+    "name":  "pgsql_host",
+    "def":    "localhost",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"pgsql_password":
+{
+  "scope": "default",
+  "common":{
+    "name":  "pgsql_password",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"pgsql_port":
+{
+  "scope": "default",
+  "common":{
+    "name":  "pgsql_port",
+    "def":   5432,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   65535
+
+  }
+},"database_port":
+{
+  "scope": "default",
+  "common":{
+    "name":  "database_port",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   65535
+
+  }
+},"pgsql_user":
+{
+  "scope": "default",
+  "common":{
+    "name":  "pgsql_user",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"post_capture":
+{
+  "scope": "both",
+  "common":{
+    "name":  "post_capture",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   2147483647
+
+  }
+},"ppm":
+{
+  "scope": "both",
+  "common":{
+    "name":  "ppm",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"pre_capture":
+{
+  "scope": "both",
+  "common":{
+    "name":  "pre_capture",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   100
+
+  }
+},"process_id_file":
+{
+  "scope": "default",
+  "common":{
+    "name":  "process_id_file",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"quality":
+{
+  "scope": "both",
+  "common":{
+    "name":  "quality",
+    "def":   75,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   1,
+    "max":   100
+
+  }
+},"quiet":
+{
+  "scope": "both",
+  "common":{
+    "name":  "quiet",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"rotate":
+{
+  "scope": "both",
+  "common":{
+    "name":  "rotate",
+    "def":   0,
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"roundrobin_frames":
+{
+  "scope": "both",
+  "common":{
+    "name":  "roundrobin_frames",
+    "def":   1,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   1,
+    "max":   2147483647
+
+  }
+},"roundrobin_skip":
+{
+  "scope": "both",
+  "common":{
+    "name":  "roundrobin_skip",
+    "def":   1,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   1,
+    "max":   2147483647
+
+  }
+},"saturation":
+{
+  "scope": "both",
+  "common":{
+    "name":  "saturation",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   255
+
+  }
+},"setup_mode":
+{
+  "scope": "default",
+  "common":{
+    "name":  "setup_mode",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true
+
+  }
+},"smart_mask_speed":
+{
+  "scope": "both",
+  "common":{
+    "name":  "smart_mask_speed",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   10
+
+  }
+},"snapshot_filename":
+{
+  "scope": "both",
+  "common":{
+    "name":  "snapshot_filename",
+    "def":    "%v-%Y%m%d%H%M%S-snapshot",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"snapshot_interval":
+{
+  "scope": "both",
+  "common":{
+    "name":  "snapshot_interval",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   2147483647
+
+  }
+},"sql_log_image":
+{
+  "scope": "both",
+  "common":{
+    "name":  "sql_log_image",
+    "def":   true,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"sql_log_mpeg":
+{
+  "scope": "both",
+  "common":{
+    "name":  "sql_log_mpeg",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"sql_log_snapshot":
+{
+  "scope": "both",
+  "common":{
+    "name":  "sql_log_snapshot",
+    "def":   true,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"sql_log_timelapse":
+{
+  "scope": "both",
+  "common":{
+    "name":  "sql_log_timelapse",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"sql_query":
+{
+  "scope": "both",
+  "common":{
+    "name":  "sql_query",
+    "def":    "insert into security(camera, filename, frame, file_type, time_stamp, text_event) values('%t', '%f', '%q', '%n', '%Y-%m-%d %T', '%C')",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"logfile":
+{
+  "scope": "default",
+  "common":{
+    "name":  "logfile",
+    "def":    "",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"log_type":
+{
+  "scope": "default",
+  "common":{
+    "name":  "log_type",
+    "def":    "all",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"log_level":
+{
+  "scope": "default",
+  "common":{
+    "name":  "log_level",
+    "def":   6,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   1,
+    "max":   6
+
+  }
+},"switchfilter":
+{
+  "scope": "both",
+  "common":{
+    "name":  "switchfilter",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"target_dir":
+{
+  "scope": "both",
+  "common":{
+    "name":  "target_dir",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"text_changes":
+{
+  "scope": "both",
+  "common":{
+    "name":  "text_changes",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"text_double":
+{
+  "scope": "both",
+  "common":{
+    "name":  "text_double",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"text_event":
+{
+  "scope": "both",
+  "common":{
+    "name":  "text_event",
+    "def":    "%Y%m%d%H%M%S",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"text_left":
+{
+  "scope": "both",
+  "common":{
+    "name":  "text_left",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"text_right":
+{
+  "scope": "both",
+  "common":{
+    "name":  "text_right",
+    "def":    "%Y-%m-%d\n%T",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"thread":
+{
+  "scope": "none",
+  "common":{
+    "name":  "thread",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"threshold":
+{
+  "scope": "both",
+  "common":{
+    "name":  "threshold",
+    "def":   1500,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   1,
+    "max":   2147483647
+
+  }
+},"threshold_tune":
+{
+  "scope": "both",
+  "common":{
+    "name":  "threshold_tune",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"timelapse_filename":
+{
+  "scope": "both",
+  "common":{
+    "name":  "timelapse_filename",
+    "def":    "%v-%Y%m%d-timelapse",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"track_auto":
+{
+  "scope": "both",
+  "common":{
+    "name":  "track_auto",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"track_iomojo_id":
+{
+  "scope": "both",
+  "common":{
+    "name":  "track_iomojo_id",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   65535
+
+  }
+},"track_maxx":
+{
+  "scope": "both",
+  "common":{
+    "name":  "track_maxx",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   65535
+
+  }
+},"track_maxy":
+{
+  "scope": "both",
+  "common":{
+    "name":  "track_maxy",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   65535
+
+  }
+},"track_motorx":
+{
+  "scope": "both",
+  "common":{
+    "name":  "track_motorx",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   65535
+
+  }
+},"track_motory":
+{
+  "scope": "both",
+  "common":{
+    "name":  "track_motory",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   65535
+
+  }
+},"track_move_wait":
+{
+  "scope": "both",
+  "common":{
+    "name":  "track_move_wait",
+    "def":   10,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   65535
+
+  }
+},"track_port":
+{
+  "scope": "both",
+  "common":{
+    "name":  "track_port",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"track_speed":
+{
+  "scope": "both",
+  "common":{
+    "name":  "track_speed",
+    "def":   255,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   255
+
+  }
+},"track_step_angle_x":
+{
+  "scope": "both",
+  "common":{
+    "name":  "track_step_angle_x",
+    "def":   10,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   90
+
+  }
+},"track_step_angle_y":
+{
+  "scope": "both",
+  "common":{
+    "name":  "track_step_angle_y",
+    "def":   10,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   40
+
+  }
+},"track_stepsize":
+{
+  "scope": "both",
+  "common":{
+    "name":  "track_stepsize",
+    "def":   40,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   255
+
+  }
+},"track_type":
+{
+  "scope": "both",
+  "common":{
+    "name":  "track_type",
+    "def":   0,
+    "type":  "",
+    "read":  true,
+    "write": true
+
+  }
+},"tunerdevice":
+{
+  "scope": "both",
+  "common":{
+    "name":  "tunerdevice",
+    "def":   "/dev/tuner0",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"v4l2_palette":
+{
+  "scope": "both",
+  "common":{
+    "name":  "v4l2_palette",
+    "def":   8,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   8
+
+  }
+},"video_pipe":
+{
+  "scope": "both",
+  "common":{
+    "name":  "video_pipe",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"videodevice":
+{
+  "scope": "both",
+  "common":{
+    "name":  "videodevice",
+    "def":   "/dev/video0 (FreeBSD: /dev/bktr0)",
+    "type":  "string",
+    "read":  true,
+    "write": true
+
+  }
+},"webcam_limit":
+{
+  "scope": "both",
+  "common":{
+    "name":  "webcam_limit",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   2147483647
+
+  }
+},"sdl_threadnr":
+{
+  "scope": "both",
+  "common":{
+    "name":  "sdl_threadnr",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   2
+
+  }
+},"webcam_localhost":
+{
+  "scope": "both",
+  "common":{
+    "name":  "webcam_localhost",
+    "def":   true,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"webcam_maxrate":
+{
+  "scope": "both",
+  "common":{
+    "name":  "webcam_maxrate",
+    "def":   1,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   1,
+    "max":   100
+
+  }
+},"webcam_motion":
+{
+  "scope": "both",
+  "common":{
+    "name":  "webcam_motion",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"use_extpipe":
+{
+  "scope": "both",
+  "common":{
+    "name":  "use_extpipe",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"ipv6_enabled":
+{
+  "scope": "none",
+  "common":{
+    "name":  "ipv6_enabled",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"stream_motion":
+{
+  "scope": "none",
+  "common":{
+    "name":  "stream_motion",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"stream_localhost":
+{
+  "scope": "none",
+  "common":{
+    "name":  "stream_localhost",
+    "def":   true,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"webcontrol_localhost":
+{
+  "scope": "none",
+  "common":{
+    "name":  "webcontrol_localhost",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"webcontrol_html_output":
+{
+  "scope": "none",
+  "common":{
+    "name":  "webcontrol_html_output",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"track_motorx_reverse":
+{
+  "scope": "none",
+  "common":{
+    "name":  "track_motorx_reverse",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"track_motory_reverse":
+{
+  "scope": "none",
+  "common":{
+    "name":  "track_motory_reverse",
+    "def":   false,
+    "type":  "boolean",
+    "read":  true,
+    "write": true,
+    "min":   false,
+    "max":   true
+
+  }
+},"extpipe":
+{
+  "scope": "both",
+  "common":{
+    "name":  "extpipe",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"locate_motion_mode":
+{
+  "scope": "both",
+  "common":{
+    "name":  "locate_motion_mode",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"webcontrol_authentication":
+{
+  "scope": "both",
+  "common":{
+    "name":  "webcontrol_authentication",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"locate_motion_style":
+{
+  "scope": "both",
+  "common":{
+    "name":  "locate_motion_style",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"exif_text":
+{
+  "scope": "both",
+  "common":{
+    "name":  "exif_text",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"picture_filename":
+{
+  "scope": "both",
+  "common":{
+    "name":  "picture_filename",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"stream_authentication":
+{
+  "scope": "both",
+  "common":{
+    "name":  "stream_authentication",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+},"webcam_port":
+{
+  "scope": "both",
+  "common":{
+    "name":  "webcam_port",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   65535
+
+  }
+},"track_minx":
+{
+  "scope": "both",
+  "common":{
+    "name":  "track_minx",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   100
+
+  }
+},"track_miny":
+{
+  "scope": "both",
+  "common":{
+    "name":  "track_miny",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   100
+
+  }
+},"track_homex":
+{
+  "scope": "both",
+  "common":{
+    "name":  "track_homex",
+    "def":   128,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   256
+
+  }
+},"track_homey":
+{
+  "scope": "both",
+  "common":{
+    "name":  "track_homey",
+    "def":   128,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   256
+
+  }
+},"webcontrol_port":
+{
+  "scope": "both",
+  "common":{
+    "name":  "webcontrol_port",
+    "def":   8888,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   65535
+
+  }
+},"stream_port":
+{
+  "scope": "both",
+  "common":{
+    "name":  "stream_port",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   65535
+
+  }
+},"stream_maxrate":
+{
+  "scope": "both",
+  "common":{
+    "name":  "stream_maxrate",
+    "def":   1,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   100
+
+  }
+},"stream_limit":
+{
+  "scope": "both",
+  "common":{
+    "name":  "stream_limit",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   100
+
+  }
+},"stream_auth_method":
+{
+  "scope": "both",
+  "common":{
+    "name":  "stream_auth_method",
+    "def":   0,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   100
+
+  }
+},"stream_quality":
+{
+  "scope": "both",
+  "common":{
+    "name":  "stream_quality",
+    "def":   50,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   0,
+    "max":   100
+
+  }
+},"webcam_quality":
+{
+  "scope": "both",
+  "common":{
+    "name":  "webcam_quality",
+    "def":   50,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   1,
+    "max":   100
+
+  }
+},"width":
+{
+  "scope": "both",
+  "common":{
+    "name":  "width",
+    "def":   1920,
+    "type":  "number",
+    "read":  true,
+    "write": true,
+    "min":   16,
+    "max":   1920
+
+  }},"default":
+{
+  "scope": "both",
+  "common":{
+    "name":  "",
+    "def":   "",
+    "type":  "string",
+    "read":  true,
+    "write": true
+  }
+}}

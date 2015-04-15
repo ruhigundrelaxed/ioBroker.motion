@@ -1,0 +1,22 @@
+{
+    "common": {
+        "name":                     "motion",
+        "version":                  "0.0.1",
+        "title":                    "iobroker Motion  Adapter",
+        "desc":                     "Javascript/Node.js based motion adapter",
+        "platform":                 "Javascript/Node.js",
+        "mode":                     "daemon",
+        "icon":                     "motion.png",
+        "extIcon":                  "http://zuhause.muffbu.de/motion/motion.png",
+        "loglevel":                 "info",
+        "nondeletable":             true
+    },
+    "native": {
+        "motion http server address": "http://127.0.0.1",
+        "motion http server port": 8888,
+        "motion event listening port": 6666
+    },
+    "objects": [
+
+    ]
+}
