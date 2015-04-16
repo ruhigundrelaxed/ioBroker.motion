@@ -149,7 +149,7 @@ adapter.on('ready', function () {
 
 
 function main() {
-    mymotion = new mymotionmod(adapter.config['Motion HTTP Server'],adapter.config['Motion HTTP Server Port'],'','',adapter.config['Motion Eventing Port'],function(devices){
+    mymotion = new mymotionmod(adapter.config['address'],adapter.config['port_http'],'','',adapter.config['port_event'],function(devices){
     var deviceobj = {};
        for (var device in devices){
            deviceobj = devices[device];
@@ -214,10 +214,10 @@ function main() {
             adapter.setState ('thread'+ mydata.thread + '.events.event', {val: false, ack: true});
         };
         if (mydata.event == 'on_movie_end'){
-            adapter.setState ('thread'+ mydata.thread + '.events.lastmovie', {val: pic_server + (mydata.filename.split('/').pop()), ack: true});
+            adapter.setState ('thread'+ mydata.thread + '.events.lastmovie', {val: adapter.config['prefix'] + (mydata.filename.split('/').pop()), ack: true});
         };
         if (mydata.event == 'on_picture_save'){
-            adapter.setState ('thread'+ mydata.thread + '.events.lastpicture', {val: pic_server + (mydata.filename.split('/').pop()), ack: true});
+            adapter.setState ('thread'+ mydata.thread + '.events.lastpicture', {val: adapter.config['prefix'] + (mydata.filename.split('/').pop()), ack: true});
         };
     });
 

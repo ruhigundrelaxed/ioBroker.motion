@@ -12,9 +12,9 @@
         "nondeletable":             true
     },
     "native": {
-        "motion http server address": "http://127.0.0.1",
-        "motion http server port": 8888,
-        "motion event listening port": 6666
+        "address": "http://127.0.0.1",
+        "port_http": 8888,
+        "port_event": 6666
     },
     "objects": [
 
