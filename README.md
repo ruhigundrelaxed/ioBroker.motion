@@ -20,7 +20,7 @@ not implemented.
 
 1st.)   Install Motion and configure it. Test if all runs correctly.
 2nd.)   Switch off html output of the http control interface. (control_html_output = off) in motion.conf.
-3rd.)   Install the adapter by pulling it out of git and placing it in the folder io.motion, where your adapters at.
+3rd.)   Install the adapter by pulling it out of git and placing it in the folder iobroker.motion, where your adapters at.
         This will be easier, later on when it's on npm. Go inside io.motion and run npm install to install it's dependencies.
         Configure the adapter according your needs.
 4rd.)   Create a shell script with the following content:
