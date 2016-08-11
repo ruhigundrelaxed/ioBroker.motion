@@ -4,7 +4,7 @@ ioBroker motion Adapter
 
 Control, configure and receive Events from Motion.
 ### 0.0.1 (2016-11-08)
-Fixed some bug....
+Fixed some bugs....
 
 ### 0.0.0 (2015-14-04)
 Pre Release
