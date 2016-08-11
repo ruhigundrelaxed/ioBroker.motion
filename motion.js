@@ -1,31 +1,17 @@
-
-
-/* jshint -W097 */// jshint strict:false
-/*jslint node: true */
 "use strict";
 
-// you have to require the utils module and call adapter function
+
 var utils =    require(__dirname + '/lib/utils'); // Get common adapter utils
 var request = require('request');
 var trim = require('trim');
-var server = "http://localhost:8888";
-var pic_server = "http://zuhause.muffbu.de/cam1/"
 var mymotionmod = require(__dirname + '/lib/motion_helper.js');
-// you have to call the adapter function and pass a options object
-// name has to be set and has to be equal to adapters folder name and main file name excluding extension
-// adapter will be restarted automatically every time as the configuration changed, e.g system.adapter.example.0
 var adapter = utils.adapter('motion');
 
 var mymotion;
+var that = this;
 
 
 
-
-
-
-
-
-// is called when adapter shuts down - callback has to be called under any circumstances!
 adapter.on('unload', function (callback) {
     try {
         adapter.log.info('cleaned everything up...');
@@ -35,97 +21,46 @@ adapter.on('unload', function (callback) {
     }
 });
 
-// todo
-adapter.on('discover', function (callback) {
-
-});
-
-// todo
-adapter.on('install', function (callback) {
-
-});
-
-// todo
-adapter.on('uninstall', function (callback) {
-
-});
-
 // is called if a subscribed object changes
 adapter.on('objectChange', function (id, obj) {
-    adapter.log.info('objectChange ' + id + ' ' + JSON.stringify(obj));
+    adapter.log.debug('objectChange ' + id + ' ' + JSON.stringify(obj));
 });
 
-//function stateChanged(id, state) {
+adapter.on('stateChange', function (id, state) {
+	var stateval;
+	var self = this;
+	var stateval = JSON.stringify(state.val);
+	var src_arr = id.split(".");
+	var src_ada = src_arr[0];
+	var src_inst = src_arr[1];
+	var src_ent = src_arr[2];
+	var src_con = src_arr[3];
+	var src_key = src_arr[4];
+	
+	adapter.log.debug('stateChange ' + id + ' ' + JSON.stringify(state));
+	
+	if (typeof(mymotion)=='object'){
+		if (src_con == 'control') {
+			adapter.log.info(src_con + '.' + src_key +'.'+ state.val);
+			mymotion.set_control(src_con + '.' +src_ent + '.' + src_key +'.'+ state.val);
+		}
+	}
+	if (src_ent == 'default'){
+		var my_tok = 0;
+	}else{
+		var my_tok = src_ent.replace('thread', '');
+	};
+	if (!state.ack) {
+			adapter.log.debug("State update: " + stateval);
+			mymotion.set_val(my_tok,src_key,stateval,function(res){console.log(res);});
+		};
 
-//}
+    });
 
-//function stateChange(id, state) {
-//    adapter.log.info('stateChange ' + id + ' ' + JSON.stringify(state));
-//    var src_arr = id.split(".");
-//    var src_ada = src_arr[0];
-//    var src_inst = src_arr[1];
-//    var src_ent = src_arr[2];
-//    var src_con = src_arr[3];
-//    var src_key = src_arr[4];
-
-//    if (src_ent == 'default')
-//    {
-//        var my_tok = 0;
-//    }else{
-//        var my_tok = src_ent.replace('thread', '');
-//    };
-//    //request("http://localhost:8888/"+ my_tok +"/config/set?" + src_key + "=" + state["val"],function (error, response, body) {
-//    request("http://localhost:8888/"+ this.my_tok +"/config/write");
-
-//    console.log(state["val"]);
-    // you can use the ack flag to detect if state is desired or acknowledged
-//    if (!state.ack) {
-//        adapter.log.info('ack is not set!');
-//    }
-
-//    adapter.on('stateChange', stateChanged);
-//}
-
-// is called if a subscribed state changes
-//adapter.on('stateChange', initialStateChange);
-
-
- // is called if a subscribed state changes
- adapter.on('stateChange', function (id, state) {
-    adapter.log.info('stateChange ' + id + ' ' + JSON.stringify(state));
-    var src_arr = id.split(".");
-    var src_ada = src_arr[0];
-    var src_inst = src_arr[1];
-    var src_ent = src_arr[2];
-    var src_con = src_arr[3];
-    var src_key = src_arr[4];
-    if (typeof(mymotion)=='object'){
-        if (src_con == 'config') {
-
-            //mymotion.setStateConfigQueue.push(JSON.stringify(state));
-
-        }else if(src_con == 'control'){
-            adapter.log.info(src_con + '.' + src_key +'.'+ state.val);
-            mymotion.set_control(src_con + '.' +src_ent + '.' + src_key +'.'+ state.val);
-        }
-    }
-    if (src_ent == 'default')
-    {
-        var my_tok = 0;
-    }else{
-        var my_tok = src_ent.replace('thread', '');
-    };
-
-    //request("http://localhost:8888/"+ my_tok +"/config/set?" + src_key + "=" + state["val"],function (error, response, body) {
-    //request("http://localhost:8888/"+ this.my_tok +"/config/write");
 
     //console.log(state["val"]);
     // you can use the ack flag to detect if state is desired or acknowledged
-    if (!state.ack) {
-        adapter.log.info('ack is not set!');
-    }
-});
-
+  
 
 // Some message was sent to adapter instance over message box. Used by email, pushover, text2speech, ...
 adapter.on('message', function (obj) {
@@ -169,15 +104,15 @@ function main() {
             var myevents = {type: 'channel',  common:{name: 'events'}, native:{id: dev_name+ 'events'}};
             adapter.setObject(dev_name + '.' + 'events', myevents);
 
-            var object ={type: 'state', common: {role: 'switch'}, native:{id: dev_name+ 'events.event'}};
+            var object ={type: 'state', common: {role: 'switch', type: 'state'}, native:{id: dev_name+ 'events.event'}};
             adapter.setObject(dev_name + '.events.event', object);
-            var object ={type: 'state', common: {role: 'text.url'}, native:{id: dev_name+ 'events.lastmovie'}};
+            var object ={type: 'state', common: {role: 'text.url', type: 'state'}, native:{id: dev_name+ 'events.lastmovie'}};
             adapter.setObject(dev_name + '.events.lastmovie', object);
-            var object ={type: 'state', common: {role: 'text.url'}, native:{id: dev_name+ 'events.lastpicture'}};
+            var object ={type: 'state', common: {role: 'text.url', type: 'state'}, native:{id: dev_name+ 'events.lastpicture'}};
             adapter.setObject(dev_name + '.events.lastpicture', object);
-            var object ={type: 'state', common: {role: 'switch'}, native:{id: dev_name+ 'events.areadetect'}};
+            var object ={type: 'state', common: {role: 'switch', type: 'state'}, native:{id: dev_name+ 'events.areadetect'}};
             adapter.setObject(dev_name + '.events.areadetect', object);
-            var object ={type: 'state', common: {role: 'switch'}, native:{id: dev_name+ 'events.camera_lost'}};
+            var object ={type: 'state', common: {role: 'switch', type: 'state'}, native:{id: dev_name+ 'events.camera_lost'}};
             adapter.setObject(dev_name + '.events.camera_lost', object);
 
 
@@ -185,20 +120,23 @@ function main() {
            var mycontrol = {type: 'channel',  common:{name: 'control'}, native:{id: dev_name+ 'control'}};
             adapter.setObject(dev_name + '.' + 'control', mycontrol);
 
-           //Soll Detection pausieren und resumen lassen. (status, start, pause)
-           var object ={type: 'state', common: {role: 'switch'}, native:{id: dev_name+ 'control.detection'}};
-           adapter.setObject(dev_name + '.control.detection', object);
+
+           var object ={type: 'state', common: {role: 'switch', type: 'state'}, native:{id: dev_name+ 'control.detection_start'}};
+           adapter.setObject(dev_name + '.control.detection_start', object);
+           var object ={type: 'state', common: {role: 'switch', type: 'state'}, native:{id: dev_name+ 'control.detection_pause'}};
+           adapter.setObject(dev_name + '.control.detection_pause', object);
+
            //Read only. Zeigt ob device connected. (connection)
-           var object ={type: 'state', common: {role: 'indicator'}, native:{id: dev_name+ 'control.connection'}};
+           var object ={type: 'state', common: {role: 'indicator', type: 'state'}, native:{id: dev_name+ 'control.connection'}};
            adapter.setObject(dev_name + '.control.connection', object);
            //Erstellt Snapshot (snapshot)
-           var object ={type: 'state', common: {role: 'button'}, native:{id: dev_name+ 'control.snapshot'}};
+           var object ={type: 'state', common: {role: 'button', type: 'state'}, native:{id: dev_name+ 'control.snapshot'}};
            adapter.setObject(dev_name + '.control.snapshot', object);
            //Bricht laufende Aufzeichnung ab und erstellt einen Film. (makemovie)
-           var object ={type: 'state', common: {role: 'button'}, native:{id: dev_name+ 'control.makemovie'}};
+           var object ={type: 'state', common: {role: 'button', type: 'state'}, native:{id: dev_name+ 'control.makemovie'}};
            adapter.setObject(dev_name + '.control.makemovie', object);
            //Startet motion neu und liest alle Konfig Variablen neun aus den Files.
-           var object ={type: 'state', common: {role: 'switch'}, native:{id: dev_name+ 'control.restart'}};
+           var object ={type: 'state', common: {role: 'switch', type: 'state'}, native:{id: dev_name+ 'control.restart'}};
            adapter.setObject(dev_name + '.control.restart', object);
         }
 
