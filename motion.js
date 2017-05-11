@@ -170,7 +170,7 @@ function main() {
     //adapter.setState (this.my_dev_name+'.config.'+ mykey, {val: myval, ack: true});
 
     adapter.subscribeStates('*');
-
+}
 
 
 
