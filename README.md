@@ -1,8 +1,9 @@
 ![Logo](admin/motion.png)
-ioBroker motion Adapter
+# ioBroker motion Adapter
 ==============
 
 Control, configure and receive Events from Motion.
+
 ### 0.0.1 (2016-11-08)
 Fixed some bugs....
 
@@ -19,13 +20,13 @@ not implemented.
 
 ## Install & Configuration
 
-1st.)   Install Motion and configure it. Test if all runs correctly.
-2nd.)   Switch off html output of the http control interface. (control_html_output = off) in motion.conf.
-3rd.)   Install the adapter by pulling it out of git and placing it in the folder iobroker.motion, where your adapters at.
+1.   Install Motion and configure it. Test if all runs correctly.
+2.   Switch off html output of the http control interface. (control_html_output = off) in motion.conf.
+3.   Install the adapter by pulling it out of git and placing it in the folder iobroker.motion, where your adapters at.
         This will be easier, later on when it's on npm. Go inside io.motion and run npm install to install it's dependencies.
         Configure the adapter according your needs.
-4rd.)   Create a shell script with the following content:
------------------------------------------------------------
+4.   Create a shell script with the following content:
+```
         #!/bin/bash
         case $1 in
            "on_area_detected" )
@@ -60,46 +61,67 @@ not implemented.
 
 
         echo $json_answer |netcat 127.0.0.1 6666
+```
 
------------------------------------------------------------
 This will code the arguments, which are passed by motion to a valid json string and will send it to the host (in this case 127.0.0.1) which will listen on
 the port which is configured in the adapter settings. (In this case 6666)
 
 Modify the motion.conf file, that this shell script is fired on every usable event and passing its modifier as arguments.
 In my case the created shell script is called test.sh. So the section in my motion.conf looks like:
 
- # Command to be executed when an event ends after a period of no motion
- # (default: none). The period of no motion is defined by option event_gap.
- on_event_end /usr/local/etc/test.sh on_event_end %t %s %N
+### Command to be executed when an event ends after a period of no motion
 
- # Command to be executed when a picture (.ppm|.jpg) is saved (default: none)
- # To give the filename as an argument to a command append it with %f
- on_picture_save /usr/local/etc/test.sh on_picture_save %t %s %N %f
+(default: none). The period of no motion is defined by option event_gap.
 
- # Command to be executed when a motion frame is detected (default: none)
- //on_motion_detected /usr/local/etc/test.sh on_motion_detected %t %s %N <--This is commented out, because it's unusable. Use on_event!
+```
+on_event_end /usr/local/etc/test.sh on_event_end %t %s %N
+```
 
- # Command to be executed when motion in a predefined area is detected
- # Check option 'area_detect'. (default: none)
- on_area_detected /usr/local/etc/test.sh on_area_detected %t %s %N
+### Command to be executed when a picture (.ppm|.jpg) is saved (default: none)
 
- # Command to be executed when a movie file (.mpg|.avi) is created. (default: none)
- # To give the filename as an argument to a command append it with %f
- on_movie_start /usr/local/etc/test.sh on_movie_start %t %s %N %f
+To give the filename as an argument to a command append it with %f
 
- # Command to be executed when a movie file (.mpg|.avi) is closed. (default: none)
- # To give the filename as an argument to a command append it with %f
- on_movie_end /usr/local/etc/test.sh on_movie_end %t %s %N %f
+```
+on_picture_save /usr/local/etc/test.sh on_picture_save %t %s %N %f
+```
 
- # Command to be executed when a camera can't be opened or if it is lost
- # NOTE: There is situations when motion don't detect a lost camera!
- # It depends on the driver, some drivers dosn't detect a lost camera at all
- # Some hangs the motion thread. Some even hangs the PC! (default: none)
- on_camera_lost /usr/local/etc/test.sh on_camera_lost %t %s %N
+### Command to be executed when a motion frame is detected (default: none)
+```
+//on_motion_detected /usr/local/etc/test.sh on_motion_detected %t %s %N <--This is commented out, because it's unusable. Use on_event!
+```
 
+### Command to be executed when motion in a predefined area is detected
+Check option 'area_detect'. (default: none)
+```
+on_area_detected /usr/local/etc/test.sh on_area_detected %t %s %N
+```
 
+### Command to be executed when a movie file (.mpg|.avi) is created. (default: none)
+To give the filename as an argument to a command append it with %f
+
+```
+on_movie_start /usr/local/etc/test.sh on_movie_start %t %s %N %f
+```
+
+### Command to be executed when a movie file (.mpg|.avi) is closed. (default: none)
+To give the filename as an argument to a command append it with %f
+
+```
+on_movie_end /usr/local/etc/test.sh on_movie_end %t %s %N %f
+```
+
+### Command to be executed when a camera can't be opened or if it is lost
+
+**NOTE:** There is situations when motion don't detect a lost camera!
+
+It depends on the driver, some drivers dosn't detect a lost camera at all
+Some hangs the motion thread. Some even hangs the PC! (default: none)
+
+```
+on_camera_lost /usr/local/etc/test.sh on_camera_lost %t %s %N
+```
+ 
 The other adapter config options should be clear. (The Motion HTTP Server & Port as specified in motion.conf)
-
 
 ## Usage
 
@@ -107,7 +129,7 @@ The other adapter config options should be clear. (The Motion HTTP Server & Port
 
 The MIT License (MIT)
 
-Copyright (c) 2015 ruhigundrelaxed
+Copyright (c) 2015-2017 ruhigundrelaxed
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
