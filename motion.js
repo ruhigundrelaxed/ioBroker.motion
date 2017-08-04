@@ -85,11 +85,15 @@ adapter.on('ready', function () {
 
 function main() {
     mymotion = new mymotionmod(adapter.config['address'],adapter.config['port_http'],'','',adapter.config['port_event'],function(devices){
+    console.log(Object.keys(devices).length); 
     var deviceobj = {};
        for (var device in devices){
            deviceobj = devices[device];
             var dev_name = device;
-            var mydevice =  {type: 'device',common: {type: 'boolean'}, native:{id: dev_name}}
+            if ((Object.keys(devices).length) == 1){ 
+	    	if (dev_name == 'default'){dev_name = 'thread0'}; 
+	    }; 
+	    var mydevice =  {type: 'device',common: {type: 'boolean'}, native:{id: dev_name}}
             adapter.setObject(dev_name, mydevice);
             var mychannel = {type: 'channel',  common:{name: 'config'}, native:{id: dev_name + 'channel'}};
             adapter.setObject(dev_name + '.' + 'config', mychannel);
@@ -166,56 +170,8 @@ function main() {
     //adapter.setState (this.my_dev_name+'.config.'+ mykey, {val: myval, ack: true});
 
     adapter.subscribeStates('*');
-
-
-
-
-    /**
-     *
-     *      For every state in the system there has to be also an object of type state
-     *
-     *      Here a simple example for a boolean variable named "testVariable"
-     *
-     *      Because every adapter instance uses its own unique namespace variable names can't collide with other adapters variables
-     *
-     */
-
-
-    // in this example all states changes inside the adapters namespace are subscribed
-
 }
 
-/**
- *   setState examples
- *
- *   you will notice that each setState will cause the stateChange event to fire (because of above subscribeStates cmd)
- *
- */
-
-// the variable testVariable is set to true
-//adapter.setState('testVariable', true);
-
-
-
-// same thing, but the value is flagged "ack"
-// ack should be always set to true if the value is received from or acknowledged from the target system
-//adapter.setState('testVariable', {val: true, ack: true});
-
-
-
-// same thing, but the state is deleted after 30s (getState will return null afterwards)
-//adapter.setState('testVariable', {val: true, ack: true, expire: 30});
-
-
-
-// examples for the checkPassword/checkGroup functions
-//adapter.checkPassword('admin', 'iobroker', function (res) {
-//    console.log('check user admin pw ioboker: ' + res);
-//});
-
-//adapter.checkGroup('admin', 'admin', function (res) {
-//    console.log('check group user admin group admin: ' + res);
-//    }
 
 
 
