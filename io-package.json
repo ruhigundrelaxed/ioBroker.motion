@@ -7,7 +7,7 @@
         "platform":                 "Javascript/Node.js",
         "mode":                     "daemon",
         "icon":                     "motion.png",
-        "extIcon":                  "http://zuhause.muffbu.de/motion/motion.png",
+        "extIcon":                  "https://raw.githubusercontent.com/ruhigundrelaxed/ioBroker.motion/master/admin/motion.png",
         "loglevel":                 "info",
         "nondeletable":             true
     },
