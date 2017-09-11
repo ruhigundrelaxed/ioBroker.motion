@@ -108,15 +108,15 @@ function main() {
             var myevents = {type: 'channel',  common:{name: 'events'}, native:{id: dev_name+ 'events'}};
             adapter.setObject(dev_name + '.' + 'events', myevents);
 
-            var object ={type: 'state', common: {role: 'switch', type: 'state'}, native:{id: dev_name+ 'events.event'}};
+            var object ={type: 'state', common: {role: 'switch', type: 'state', name: 'event_in_progress'}, native:{id: dev_name+ 'events.event'}};
             adapter.setObject(dev_name + '.events.event', object);
-            var object ={type: 'state', common: {role: 'text.url', type: 'state'}, native:{id: dev_name+ 'events.lastmovie'}};
+            var object ={type: 'state', common: {role: 'text.url', type: 'state', name: 'lastmovie'}, native:{id: dev_name+ 'events.lastmovie'}};
             adapter.setObject(dev_name + '.events.lastmovie', object);
-            var object ={type: 'state', common: {role: 'text.url', type: 'state'}, native:{id: dev_name+ 'events.lastpicture'}};
+            var object ={type: 'state', common: {role: 'text.url', type: 'state', name: 'lastpicture'}, native:{id: dev_name+ 'events.lastpicture'}};
             adapter.setObject(dev_name + '.events.lastpicture', object);
-            var object ={type: 'state', common: {role: 'switch', type: 'state'}, native:{id: dev_name+ 'events.areadetect'}};
+            var object ={type: 'state', common: {role: 'switch', type: 'state', name: 'areadetect' }, native:{id: dev_name+ 'events.areadetect'}};
             adapter.setObject(dev_name + '.events.areadetect', object);
-            var object ={type: 'state', common: {role: 'switch', type: 'state'}, native:{id: dev_name+ 'events.camera_lost'}};
+            var object ={type: 'state', common: {role: 'switch', type: 'state', name: 'camera_lost'}, native:{id: dev_name+ 'events.camera_lost'}};
             adapter.setObject(dev_name + '.events.camera_lost', object);
 
 
@@ -125,22 +125,22 @@ function main() {
             adapter.setObject(dev_name + '.' + 'control', mycontrol);
 
 
-           var object ={type: 'state', common: {role: 'switch', type: 'state'}, native:{id: dev_name+ 'control.detection_start'}};
+            var object ={type: 'state', common: {role: 'switch', type: 'state', name:'start_detection'}, native:{id: dev_name+ 'control.detection_start'}};
            adapter.setObject(dev_name + '.control.detection_start', object);
-           var object ={type: 'state', common: {role: 'switch', type: 'state'}, native:{id: dev_name+ 'control.detection_pause'}};
+           var object ={type: 'state', common: {role: 'switch', type: 'state', name:'pause_detection'}, native:{id: dev_name+ 'control.detection_pause'}};
            adapter.setObject(dev_name + '.control.detection_pause', object);
 
            //Read only. Zeigt ob device connected. (connection)
-           var object ={type: 'state', common: {role: 'indicator', type: 'state'}, native:{id: dev_name+ 'control.connection'}};
+           var object ={type: 'state', common: {role: 'indicator', type: 'state', name: 'is_connected'}, native:{id: dev_name+ 'control.connection'}};
            adapter.setObject(dev_name + '.control.connection', object);
            //Erstellt Snapshot (snapshot)
-           var object ={type: 'state', common: {role: 'button', type: 'state'}, native:{id: dev_name+ 'control.snapshot'}};
+           var object ={type: 'state', common: {role: 'button', type: 'state', name: 'take_snapshot'}, native:{id: dev_name+ 'control.snapshot'}};
            adapter.setObject(dev_name + '.control.snapshot', object);
            //Bricht laufende Aufzeichnung ab und erstellt einen Film. (makemovie)
-           var object ={type: 'state', common: {role: 'button', type: 'state'}, native:{id: dev_name+ 'control.makemovie'}};
+           var object ={type: 'state', common: {role: 'button', type: 'state', name: 'make_movie'}, native:{id: dev_name+ 'control.makemovie'}};
            adapter.setObject(dev_name + '.control.makemovie', object);
            //Startet motion neu und liest alle Konfig Variablen neun aus den Files.
-           var object ={type: 'state', common: {role: 'switch', type: 'state'}, native:{id: dev_name+ 'control.restart'}};
+           var object ={type: 'state', common: {role: 'switch', type: 'state', name: 'restart'}, native:{id: dev_name+ 'control.restart'}};
            adapter.setObject(dev_name + '.control.restart', object);
         }
 
