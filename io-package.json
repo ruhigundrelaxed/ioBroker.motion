@@ -1,22 +1,23 @@
 {
     "common": {
-        "name":                     "motion",
-        "version":                  "0.0.1",
-        "title":                    "iobroker Motion  Adapter",
-        "desc":                     "Javascript/Node.js based motion adapter",
-        "platform":                 "Javascript/Node.js",
-        "mode":                     "daemon",
-        "icon":                     "motion.png",
-        "extIcon":                  "https://raw.githubusercontent.com/ruhigundrelaxed/ioBroker.motion/master/admin/motion.png",
-        "loglevel":                 "info",
-        "nondeletable":             true
+        "name": "motion",
+        "version": "0.0.1",
+        "title": "iobroker Motion  Adapter",
+        "desc": "Javascript/Node.js based motion adapter",
+        "platform": "Javascript/Node.js",
+        "mode": "daemon",
+        "icon": "motion.png",
+        "extIcon": "https://raw.githubusercontent.com/ruhigundrelaxed/ioBroker.motion/master/admin/motion.png",
+        "loglevel": "info",
+        "nondeletable": true,
+        "authors": [
+            "ruhigundrelaxed<martin@qvadrat.de>"
+        ]
     },
     "native": {
         "address": "http://127.0.0.1",
         "port_http": 8888,
         "port_event": 6666
     },
-    "objects": [
-
-    ]
+    "objects": []
 }

@@ -5,18 +5,21 @@
   "author": "ruhigundrelaxed<martin@qvadrat.de>",
   "homepage": "https://github.com/ruhigundrelaxed/ioBroker.motion/ioBroker.adapterName",
   "readme": "https://github.com/ruhigundrelaxed/ioBroker.motion/blob/master/README.md",
-  "keywords": ["ioBroker", "motion"],
+  "keywords": [
+    "ioBroker",
+    "motion"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ruhigundrelaxed/iobroker.motion.git"
   },
   "dependencies": {
-      "request": "",
-      "trim": ""
+    "request": "",
+    "trim": ""
   },
   "devDependencies": {
-      "mocha": "^2.3.4",
-      "chai": "^3.4.1"
+    "mocha": "^3.5.3",
+    "chai": "^4.1.2"
   },
   "bugs": {
     "url": "https://github.com/ruhigundrelaxed/ioBroker.motion/issues"
