@@ -5,7 +5,7 @@ var utils =    require(__dirname + '/lib/utils'); // Get common adapter utils
 var request = require('request');
 var trim = require('trim');
 var mymotionmod = require(__dirname + '/lib/motion_helper.js');
-var adapter = utils.adapter('motion');
+var adapter = utils.Adapter('motion');
 
 var mymotion;
 var that = this;
