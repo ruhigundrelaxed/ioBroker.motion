@@ -10,6 +10,7 @@
         "extIcon": "https://raw.githubusercontent.com/ruhigundrelaxed/ioBroker.motion/master/admin/motion.png",
         "loglevel": "info",
         "nondeletable": true,
+        "license":                  "MIT",
         "authors": [
             "ruhigundrelaxed<martin@qvadrat.de>"
         ]
