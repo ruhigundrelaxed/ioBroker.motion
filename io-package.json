@@ -2,7 +2,7 @@
     "common": {
         "name": "motion",
         "version": "0.0.1",
-        "title": "iobroker Motion  Adapter",
+        "title": "Motion",
         "desc": "Javascript/Node.js based motion adapter",
         "platform": "Javascript/Node.js",
         "mode": "daemon",
