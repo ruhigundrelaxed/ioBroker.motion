@@ -11,7 +11,7 @@
         "loglevel": "info",
         "nondeletable": true,
         "license":                  "MIT",
-        "type": "security",
+        "type": "other",
         "authors": [
             "ruhigundrelaxed<martin@qvadrat.de>"
         ]
