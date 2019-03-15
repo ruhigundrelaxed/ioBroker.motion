@@ -1,7 +1,7 @@
 "use strict";
 
 
-var utils =    require(__dirname + '/lib/utils'); // Get common adapter utils
+var utils = require('@iobroker/adapter-core'); // Get common adapter utils
 var request = require('request');
 var trim = require('trim');
 var mymotionmod = require(__dirname + '/lib/motion_helper.js');

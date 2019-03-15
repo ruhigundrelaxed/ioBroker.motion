@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "request": "",
-    "trim": ""
+    "trim": "",
+    "@iobroker/adapter-core": "^1.0.3"
   },
   "devDependencies": {
     "mocha": "^4.1.0",

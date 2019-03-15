@@ -1,6 +1,6 @@
 ![Logo](admin/motion.png)
 # ioBroker motion Adapter
-==============
+![Number of Installations](http://iobroker.live/badges/motion-installed.svg) ![Number of Installations](http://iobroker.live/badges/motion-stable.svg) ==============
 
 Control, configure and receive Events from Motion.
 
